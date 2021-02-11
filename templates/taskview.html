@@ -6,15 +6,9 @@
     <div class="col-md-12" id="heading"> <h2>TODO APP</h2></div>
 </div>
 
-<div class="row p-2 pl-2">
-    <div class="col-md-5 "> <h3>Add Task</h3></div>
-    <div class="col-md-2 "> </div>
-    <div class="col-md-5 "> <h3>Task Completed</h3></div>
-</div>
-
-
 <div class="row p-2 pt-3 pl-4">
-    <div class="col-md-5 p-2 shadow" id="col1">
+    <div class="col-md-5 p-2" id="col1">
+        <h3>Add Task</h3>
         <form method="post" class="p-3">
             {% csrf_token %}
             <div class="form-group">
@@ -32,15 +26,16 @@
 
 
     <div class="col-md-5">
+        <h3>Task Completed</h3>
         {% for i in obj %}
-         <ul class="list-group list-group-flush" style=" border-radius:2rem;">
+         <ul class="list-group list-group-flush">
              <li class="list-group-item">{{i.name}}</li>
              <li class="list-group-item">{{i.priority}}</li>
              <li class="list-group-item">{{i.date}}</li>
          </ul>
         <div class="p-1 pl-4">
-        <a class="btn btn-danger" style="width:5rem;" href="{% url 'delete' i.id %}"> Delete </a>
-        <a class="btn btn-success" style="width:5rem;" href="{% url 'update' i.id %}"> Update </a>
+        <a class="btn btn-danger" href="{% url 'delete' i.id %}"> Delete </a>
+        <a class="btn btn-success" href="{% url 'update' i.id %}"> Update </a>
         </div>
      <br>
         {% endfor %}

@@ -11,14 +11,22 @@ color:white; height:6rem;
 padding-top:2rem;
 }
 #col1{
-background-color:#f95656b8;
 border-radius:2rem;
 }
 
 .form1{
 width:25rem;
+background-color:#f95656b8;
+}
+
+.list-group{
+border-radius:2rem
 }
 
 .list-group-item{
 background-color:#f95656b8
+}
+
+.btn{
+width:5rem;
 }
