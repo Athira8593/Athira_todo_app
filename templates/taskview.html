@@ -1,0 +1,51 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid p-3">
+<div class="row">
+    <div class="col-md-12" id="heading"> <h2>TODO APP</h2></div>
+</div>
+
+<div class="row p-2 pl-2">
+    <div class="col-md-5 "> <h3>Add Task</h3></div>
+    <div class="col-md-2 "> </div>
+    <div class="col-md-5 "> <h3>Task Completed</h3></div>
+</div>
+
+
+<div class="row p-2 pt-3 pl-4">
+    <div class="col-md-5 p-2 shadow" id="col1">
+        <form method="post" class="p-3">
+            {% csrf_token %}
+            <div class="form-group shadow">
+                <input type="text" name="name" placeholder="name" class="form1"><br></div>
+            <div class="form-group shadow">
+                <input type="text" name="priority" placeholder="priority" class="form1"><br></div>
+            <div class="form-group shadow">
+                <input type="date" name="date" placeholder="date"class="form1"><br></div>
+            <div class="form-group">
+                <input type="submit" value="submit" class="btn btn-success"></div>
+        </form>
+    </div>
+
+    <div class="col-md-2"></div>
+
+
+    <div class="col-md-5">
+        {% for i in obj %}
+         <ul class="list-group list-group-flush" style=" border-radius:2rem;">
+             <li class="list-group-item">{{i.name}}</li>
+             <li class="list-group-item">{{i.priority}}</li>
+             <li class="list-group-item">{{i.date}}</li>
+         </ul>
+        <div class="p-1 pl-4">
+        <a class="btn btn-danger" style="width:5rem;" href="{% url 'delete' i.id %}"> Delete </a>
+        <a class="btn btn-success" style="width:5rem;" href="{% url 'update' i.id %}"> Update </a>
+        </div>
+     <br>
+        {% endfor %}
+         </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+
+.container-fluid{
+border:5px solid;
+border-color:grey;
+}
+
+#heading{
+text-align: center;
+background-color:grey;
+color:white; height:6rem;
+padding-top:2rem;
+}
+#col1{
+background-color:#f95656b8;
+border-radius:2rem;
+}
+
+.form1{
+width:32rem
+}
+
+.list-group-item{
+background-color:#f95656b8
+}
